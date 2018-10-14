@@ -181,6 +181,8 @@ qint64 CircularBufferQAdapter::writeData(const char *data, qint64 len)
 
     mBuffer->write(sampleData, sampleCount);
 
-    emit readyRead();
+	if (len > 0) {
+		emit bytesWritten(len);
+	}
     return sampleCount * sizeof(sample_type);
 }

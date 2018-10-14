@@ -30,7 +30,7 @@ CaptureAudioStream::CaptureAudioStream(CaptureAudioStream::AudioDeviceManagerPtr
 
 void CaptureAudioStream::run()
 {
-    connect(mBuffer.get(), SIGNAL(readyRead()), this, SIGNAL(readyRead()));
+	connect(mBuffer.get(), SIGNAL(bytesWritten(qint64)), this, SIGNAL(dataReady()));
     mDevice->start();
 }
 

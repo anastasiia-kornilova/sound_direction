@@ -77,8 +77,6 @@ public:
 
     int channelCount() const;
 
-signals:
-
 private slots:
 
     qint64 readData(char *data, qint64 maxlen);

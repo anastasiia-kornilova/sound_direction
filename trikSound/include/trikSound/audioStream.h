@@ -47,8 +47,8 @@ public:
 
 signals:
 
-    virtual void readyRead();
-    virtual void finished();
+	void dataReady();
+	void finished();
 };
 
 }

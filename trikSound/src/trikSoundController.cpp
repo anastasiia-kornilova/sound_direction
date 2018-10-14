@@ -153,7 +153,7 @@ void TrikSoundController::notify(const AudioEvent& event)
 
 void TrikSoundController::run()
 {
-    connect(mAudioStream.get(), SIGNAL(readyRead()), this, SLOT(bufferReadyReadHandler()),
+	connect(mAudioStream.get(), SIGNAL(dataReady()), this, SLOT(bufferReadyReadHandler()),
             Qt::DirectConnection);
     if (mTimeoutFlag) {
         QTimer::singleShot(mTimeout, this, SLOT(finish()));

@@ -33,7 +33,7 @@ FileAudioStream::FileAudioStream(const QString& filename, size_t windowSize, QOb
 
 void FileAudioStream::run()
 {
-    emit readyRead();
+	emit dataReady();
 }
 
 void FileAudioStream::stop()
